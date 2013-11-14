@@ -28,8 +28,6 @@ Requests can then be 'spooled' in the object until the *makerequests* method is 
 	request = api.newrequest('NoveroNumbers', 'ListNumbers', 'Request1')
 	api.makerequest()
 	p request.getresponse()
-?>
-	
 ```
 
 In order to send data in a request - the *setdata* method can  be called on the *Request* object;
