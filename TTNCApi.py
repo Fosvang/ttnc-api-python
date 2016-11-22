@@ -40,10 +40,10 @@ class TTNCApi:
           self.root.appendChild(item.get())
       for item in self.requests.values():
           self.root.appendChild(item.get())
-      xml_request= str(self.root.toxml())
+      xml_request= str(self.doc.toxml())
       #print self.root.toprettyxml()
       url="https://xml.ttnc.co.uk/api/"
-      req = urllib2.Request(url)
+      req = urllib2.Request(url,data="none",headers={'Content-type': 'text/xml'})
       req.add_data(xml_request)
       resp = urllib2.urlopen(req)
       dom = parseString(resp.read())
